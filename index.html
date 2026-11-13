@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zaid’s Schedule & Reminders</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="wrap">
+  <header>
+    <div><h1>My Schedule</h1><p class="sub" id="greet">Plan your day, never miss a thing.</p></div>
+    <div style="display:flex;align-items:center"><div class="clock"><b id="time">--:--:-- --</b><span id="date"></span></div><button class="theme" id="theme" aria-label="Toggle theme">🌙</button></div>
+  </header>
+  <div class="grid">
+    <section class="card">
+      <h2>➕ New reminder</h2>
+      <label for="title">What do you need to do?</label>
+      <input id="title" placeholder="e.g. Python practice" maxlength="80">
+      <div class="row">
+        <div><label for="d">Date</label><input type="date" id="d"></div>
+        <div><label for="tm">Time</label><input type="time" id="tm"></div>
+      </div>
+      <label for="cat">Category</label>
+      <select id="cat">
+        <option value="#6366f1">📚 Study</option>
+        <option value="#ec4899">🎤 Personal</option>
+        <option value="#10b981">🏏 Sports</option>
+        <option value="#f59e0b">💼 Work</option>
+        <option value="#06b6d4">⭐ Other</option>
+      </select>
+      <button class="add" id="add">Set reminder</button>
+      <div class="ring">
+        <svg viewBox="0 0 80 80"><defs><linearGradient id="g"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs><circle class="bg" cx="40" cy="40" r="36"/><circle class="fg" id="fg" cx="40" cy="40" r="36"/></svg>
+        <div><b id="pct" style="font-size:1.5rem">0%</b><div class="m" id="pinfo">No tasks yet</div></div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>📅 Your schedule</h2>
+      <div class="tabs" id="tabs">
+        <button class="tab on" data-f="all">All</button><button class="tab" data-f="today">Today</button><button class="tab" data-f="up">Upcoming</button><button class="tab" data-f="done">Done</button>
+      </div>
+      <div id="list"></div>
+    </section>
+  </div>
+</div>
+<div class="modal" id="modal"><div class="box"><div class="bell">🔔</div><h3 id="mt">Reminder</h3><div class="m" id="mm"></div>
+<div class="btns"><button class="snz" id="snz">Snooze 5 min</button><button class="ok" id="ok">Done ✓</button></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
